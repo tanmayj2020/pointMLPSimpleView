@@ -5,11 +5,11 @@ from models.mv_utils import PCViews
 
 
 class MVModel(nn.Module):
-    def __init__(self,num_classs,backbone = 'resnet18',
+    def __init__(self,num_classes,backbone = 'resnet18',
                  feat_size = 16):
 
         super().__init__()
-        self.num_class = num_classs
+        self.num_class = num_classes
         self.dropout_p = 0.5
         self.feat_size = feat_size
 
