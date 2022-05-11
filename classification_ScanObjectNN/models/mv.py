@@ -33,7 +33,6 @@ class MVModel(nn.Module):
         :return:
         """
 
-        pc = pc.cuda()
         img = self.get_img(pc)
         feat = self.img_model(img)
         logit = self.final_fc(feat)

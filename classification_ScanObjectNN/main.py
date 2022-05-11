@@ -184,9 +184,9 @@ def train(net, trainloader, optimizer, criterion, device):
     time_cost = datetime.datetime.now()
     for batch_idx, (data, label) in enumerate(trainloader):
         data, label = data.to(device), label.to(device).squeeze()
-        data = data.permute(0, 2, 1)  # so, the input data shape is [batch, 3, 1024]
+        #data = data.permute(0, 2, 1)  # so, the input data shape is [batch, 3, 1024]
         optimizer.zero_grad()
-        logits = net(data)
+        logits = net(data)['logit']
         loss = criterion(logits, label)
         loss.backward()
         optimizer.step()
