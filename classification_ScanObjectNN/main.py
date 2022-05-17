@@ -225,7 +225,7 @@ def validate(net, testloader, criterion, device):
         for batch_idx, (data, label) in enumerate(testloader):
             data, label = data.to(device), label.to(device).squeeze()
             #data = data.permute(0, 2, 1)
-            logits = net(data)
+            logits = net(data)['logit']
             loss = criterion(logits, label)
             test_loss += loss.item()
             preds = logits.max(dim=1)[1]
