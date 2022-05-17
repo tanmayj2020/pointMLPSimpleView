@@ -224,7 +224,7 @@ def validate(net, testloader, criterion, device):
     with torch.no_grad():
         for batch_idx, (data, label) in enumerate(testloader):
             data, label = data.to(device), label.to(device).squeeze()
-            data = data.permute(0, 2, 1)
+            #data = data.permute(0, 2, 1)
             logits = net(data)
             loss = criterion(logits, label)
             test_loss += loss.item()
