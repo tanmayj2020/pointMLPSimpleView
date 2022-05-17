@@ -67,7 +67,7 @@ class MVModel(nn.Module):
            # progress=False,
            # feature_size=feat_size,
            # zero_init_residual=True)
-        backbone_mod =resnet34(pretrained=False)
+        backbone_mod =resnet34(pretrained=False , feature_size=feat_size)
         all_layers = [x for x in backbone_mod.children()]
         in_features = all_layers[-1].in_features
 
