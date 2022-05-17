@@ -56,7 +56,7 @@ class MVModel(nn.Module):
         Return layers for the image model
         """
 
-        from models.resnet import resnet34
+        from models.resnet import resnet50
         #assert backbone == 'resnet18'
         #layers = [2, 2, 2, 2]
         #block = BasicBlock
@@ -67,7 +67,7 @@ class MVModel(nn.Module):
            # progress=False,
            # feature_size=feat_size,
            # zero_init_residual=True)
-        backbone_mod =resnet34(pretrained=False , feature_size=feat_size)
+        backbone_mod =resnet50(pretrained=False , feature_size=feat_size)
         all_layers = [x for x in backbone_mod.children()]
         in_features = all_layers[-1].in_features
 
