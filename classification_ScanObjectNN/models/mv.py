@@ -60,7 +60,8 @@ class MVModel(nn.Module):
         #assert backbone == 'resnet18'
         layers = [2, 2, 2, 2]
         block = BasicBlock
-       backbone_mod = _resnet(
+        backbone_mod = _resnet(
+            arch =None,
             block=block,
             layers=layers,
             pretrained=False,
